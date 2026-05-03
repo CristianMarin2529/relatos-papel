@@ -1,0 +1,104 @@
+/*
+ * Tokens visuales Mi Librería — alineados con el export Figma Make (paleta stone + amber).
+ * Usar var(--lib-*) en hojas de página; no sustituyen --accent del starter salvo donde se indique.
+ */
+:root {
+  --lib-stone-50: #fafaf9;
+  --lib-stone-100: #f5f5f4;
+  --lib-stone-200: #e7e5e4;
+  --lib-stone-300: #d6d3d1;
+  --lib-stone-400: #a8a29e;
+  --lib-stone-500: #78716c;
+  --lib-stone-600: #57534e;
+  --lib-stone-700: #44403c;
+  --lib-stone-800: #292524;
+  --lib-stone-900: #1c1917;
+
+  --lib-amber-50: #fffbeb;
+  --lib-amber-100: #fef3c7;
+  --lib-amber-500: #f59e0b;
+  --lib-amber-600: #d97706;
+  --lib-amber-700: #b45309;
+
+  --lib-radius-sm: 0.375rem;
+  --lib-radius-md: 0.5rem;
+  --lib-radius-lg: 0.75rem;
+  --lib-radius-xl: 1rem;
+  --lib-radius-2xl: 1rem;
+
+  --lib-border: var(--lib-stone-200);
+  --lib-border-strong: var(--lib-stone-300);
+
+  --lib-shadow-sm:
+    0 1px 2px rgb(28 24 27 / 0.05),
+    0 1px 3px rgb(28 24 27 / 0.08);
+  --lib-shadow-card:
+    0 1px 3px rgb(28 24 27 / 0.06),
+    0 10px 24px -8px rgb(28 24 27 / 0.1);
+  --lib-shadow-card-hover:
+    0 12px 32px -10px rgb(28 24 27 / 0.14);
+
+  --lib-page-gradient: linear-gradient(
+    to bottom right,
+    var(--lib-amber-50) 0%,
+    #ffffff 48%,
+    var(--lib-stone-50) 100%
+  );
+
+  --lib-focus-ring: 0 0 0 2px #fff, 0 0 0 4px var(--lib-amber-500);
+
+  --lib-font-sans:
+    ui-sans-serif, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Vista About (sin CSS propio en JSX) */
+#root:has(.page-about) {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border: none;
+  text-align: initial;
+  min-height: 100svh;
+  background: var(--lib-page-gradient);
+}
+
+.page-about {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  max-width: 42rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: var(--lib-font-sans);
+  color: var(--lib-stone-800);
+}
+
+.page-about h1 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--lib-stone-900);
+}
+
+.page-about {
+  background: #fff;
+  border-radius: var(--lib-radius-xl);
+  border: 1px solid var(--lib-border);
+  box-shadow: var(--lib-shadow-card);
+}
+
+.page-about p {
+  line-height: 1.6;
+  margin: 0 0 0.75rem;
+  color: var(--lib-stone-600);
+  font-size: 0.9375rem;
+}
+
+.page-about code {
+  font-size: 0.875em;
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--lib-radius-sm);
+  background: var(--lib-stone-100);
+  color: var(--lib-stone-800);
+  border: 1px solid var(--lib-stone-200);
+}

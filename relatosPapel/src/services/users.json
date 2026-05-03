@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "id": "user-1",
+      "email": "usuario@gmail.com",
+      "password": "12345",
+      "nombre": "Jose Flores",
+      "telefono": "31325467982",
+      "direccion": "Cra143#14a24",
+      "ciudad": "Bogotá D.C"
+    }
+  ]
+}

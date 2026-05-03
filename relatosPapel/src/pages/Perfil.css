@@ -1,0 +1,156 @@
+/* Perfil — tablas y datos en tarjetas */
+
+.perfil-pagina {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.25rem clamp(1rem, 3vw, 1.5rem) 2rem;
+  box-sizing: border-box;
+}
+
+.perfil-volver {
+  margin: 0 0 1rem;
+}
+
+.perfil-volver a {
+  color: var(--lib-amber-600);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+
+.perfil-volver a:hover {
+  color: var(--lib-amber-700);
+  text-decoration: underline;
+}
+
+.perfil-titulo {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--lib-stone-900);
+}
+
+.perfil-seccion {
+  margin-bottom: 1.75rem;
+  padding: 1.2rem 1.35rem;
+  border: 1px solid var(--lib-border);
+  border-radius: var(--lib-radius-lg);
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: var(--lib-shadow-sm);
+}
+
+.perfil-seccion__titulo {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--lib-stone-900);
+}
+
+.perfil-seccion__ayuda {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--lib-stone-600);
+}
+
+.perfil-seccion p[role='status'],
+.perfil-seccion p[role='alert'] {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.perfil-seccion p[role='alert'] {
+  color: #991b1b;
+  padding: 0.6rem 0.75rem;
+  background: #fef2f2;
+  border-radius: var(--lib-radius-md);
+  border: 1px solid #fecaca;
+}
+
+.perfil-tabla-wrap {
+  overflow-x: auto;
+  border-radius: var(--lib-radius-md);
+  border: 1px solid var(--lib-stone-200);
+}
+
+.perfil-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.perfil-tabla th,
+.perfil-tabla td {
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  border-bottom: 1px solid var(--lib-stone-200);
+}
+
+.perfil-tabla th {
+  font-weight: 700;
+  background: var(--lib-stone-50);
+  color: var(--lib-stone-800);
+}
+
+.perfil-tabla tbody tr:hover {
+  background: var(--lib-stone-50);
+}
+
+.perfil-tabla tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.perfil-acciones {
+  margin-top: 0.75rem;
+}
+
+.perfil-enlace-detalle {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--lib-amber-600);
+  text-decoration: none;
+  padding: 0.35rem 0;
+}
+
+.perfil-enlace-detalle:hover {
+  color: var(--lib-amber-700);
+  text-decoration: underline;
+}
+
+.perfil-enlace-detalle:focus-visible {
+  outline: none;
+  border-radius: var(--lib-radius-sm);
+  box-shadow: var(--lib-focus-ring);
+}
+
+.perfil-datos {
+  margin: 0;
+}
+
+.perfil-datos__fila {
+  display: grid;
+  grid-template-columns: minmax(120px, 180px) 1fr;
+  gap: 0.35rem 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--lib-stone-200);
+}
+
+.perfil-datos__fila:last-child {
+  border-bottom: none;
+}
+
+.perfil-datos__fila dt {
+  margin: 0;
+  font-weight: 600;
+  color: var(--lib-stone-600);
+  font-size: 0.875rem;
+}
+
+.perfil-datos__fila dd {
+  margin: 0;
+  color: var(--lib-stone-900);
+  font-size: 0.9375rem;
+}
