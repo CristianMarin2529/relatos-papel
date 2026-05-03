@@ -8,7 +8,7 @@ export default function CabeceraLanding({ usuario, onLogout }) {
       <div className="landing-cabecera__marca">
         <img
           className="landing-cabecera__logo"
-          src="/images/icono-libro.svg"
+          src="/images/icono-libro.png"
           width="48"
           height="48"
           alt=""

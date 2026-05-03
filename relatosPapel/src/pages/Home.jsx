@@ -15,8 +15,9 @@ const librosDestacados = [
     autor: 'Naira Gamboa',
   },
   {
-    titulo: 'Mi portada de libro',
-    imagen: '/images/libro-mi-portada.jpg',
+    titulo: 'El barco de los niños',
+    imagen: '/images/el-barco.jpg',
+    autor: 'Mario Vargas Llosa',
   },
 ]
 
@@ -58,7 +59,6 @@ export default function Home() {
         <h2 id="landing-cta-titulo">
           ¿Listo para iniciar tu viaje literario?
         </h2>
-        <button type="button">Registrate</button>
       </footer>
     </div>
   )

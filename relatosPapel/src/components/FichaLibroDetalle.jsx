@@ -15,7 +15,6 @@ export default function FichaLibroDetalle({
         <p className="libro-detalle-ficha__autor">{libro.autor}</p>
         <p className="libro-detalle-ficha__precio">{libro.precio}</p>
         <p className="libro-detalle-ficha__reseñas">
-          <a href="#reseñas">Ver reseñas</a>
         </p>
         <h2 className="libro-detalle-ficha__subtitulo">Descripción</h2>
         <p className="libro-detalle-ficha__descripcion">{libro.descripcion}</p>

@@ -26,7 +26,7 @@ export default function CabeceraTienda({ usuario, onLogout }) {
   return (
     <header className="tienda-cabecera">
       <Link to="/tienda" className="tienda-cabecera__marca">
-        <img src="/images/icono-libro.svg" width="40" height="40" alt="" />
+        <img src="/images/icono-libro.png" width="40" height="40" alt="" />
         <span className="tienda-cabecera__nombre">Relatos de papel</span>
       </Link>
 
@@ -45,7 +45,7 @@ export default function CabeceraTienda({ usuario, onLogout }) {
             autoComplete="off"
           />
           <span className="tienda-cabecera__busqueda-icono" aria-hidden>
-            🔍
+           
           </span>
         </div>
       </div>
@@ -70,9 +70,7 @@ export default function CabeceraTienda({ usuario, onLogout }) {
           <span aria-hidden> ({totalArticulos})</span>
         </Link>
 
-        <button type="button" aria-label="Idioma">
-          <span aria-hidden>文A</span>
-        </button>
+
 
         <Link
           to="/tienda/perfil"

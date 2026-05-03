@@ -169,7 +169,7 @@
   font-size: 1.1rem;
   line-height: 1;
   border: none;
-  background: var(--lib-stone-100);
+  background: #991b1b;
   border-radius: var(--lib-radius-sm);
   transition: background-color 0.2s ease;
 }

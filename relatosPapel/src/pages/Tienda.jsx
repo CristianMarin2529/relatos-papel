@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import CabeceraTienda from '../components/CabeceraTienda.jsx'
 import PaginacionCatalogo from '../components/PaginacionCatalogo.jsx'
-import SidebarCatalogo from '../components/SidebarCatalogo.jsx'
 import TarjetaLibro from '../components/TarjetaLibro.jsx'
 import { useAuth } from '../context/useAuth.js'
 import { getBooks } from '../services/bookService.js'
@@ -70,8 +69,6 @@ export default function Tienda() {
       <CabeceraTienda usuario={usuario} onLogout={handleLogout} />
 
       <div className="tienda-cuerpo">
-        <SidebarCatalogo />
-
         <section className="tienda-main" aria-labelledby="tienda-titulo">
           <h1 id="tienda-titulo" className="tienda-main__titulo">
             Descubre tu próxima lectura
