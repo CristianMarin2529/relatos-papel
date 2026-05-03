@@ -1,0 +1,269 @@
+/*
+ * LoginPage.css — Vista de inicio de sesión.
+ * Derivado del diseño Figma Make exportado en flash-crisp… (tailwind: stone + amber).
+ *
+ * ── Tokens (solo dentro de esta pantalla excepto cuando se anota #root) ──
+ */
+.pagina-login {
+  /* Alias locales → tokens globales theme-libreria.css */
+  --login-bg-from: var(--lib-amber-50);
+  --login-bg-via: #ffffff;
+  --login-bg-to: var(--lib-stone-50);
+
+  --login-surface: #ffffff;
+
+  --login-stone-300: var(--lib-stone-300);
+  --login-stone-400: var(--lib-stone-400);
+  --login-stone-500: var(--lib-stone-500);
+  --login-stone-600: var(--lib-stone-600);
+  --login-stone-700: var(--lib-stone-700);
+  --login-stone-800: var(--lib-stone-800);
+  --login-stone-900: var(--lib-stone-900);
+
+  --login-amber-50: var(--lib-amber-50);
+  --login-amber-500: var(--lib-amber-500);
+  --login-amber-600: var(--lib-amber-600);
+  --login-amber-700: var(--lib-amber-700);
+
+  --login-radius-input: var(--lib-radius-md);
+  --login-radius-card: var(--lib-radius-xl);
+
+  --login-font-sans: var(--lib-font-sans);
+  --login-text-title: clamp(1.375rem, 3.5vw, 1.75rem); /* ~text-2xl */
+  --login-text-lead: 0.9375rem; /* text-sm–base bridge */
+  --login-text-btn: 1.125rem; /* text-lg */
+
+  box-sizing: border-box;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 28rem; /* contenido centrado; card contenida */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 1.75rem); /* p-4 Figma viewport */
+  min-height: min(100dvh, 100%);
+  font-family: var(--login-font-sans);
+  color: var(--login-stone-800);
+
+  isolation: isolate;
+}
+
+/* Tapete de página: gradient fijo detrás del card (viewport completo sin tocar JSX) */
+.pagina-login::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom right,
+    var(--login-bg-from) 0%,
+    var(--login-bg-via) 48%,
+    var(--login-bg-to) 100%
+  );
+}
+
+/*
+ * Card blanca — mismo espíritu que max-w-card + rounded-2xl shadow-xl + p-8 md:p-12
+ * Envolvemos superficie usando el main como recipiente elevado en esta ruta.
+ */
+.pagina-login {
+  background-color: var(--login-surface);
+  border-radius: var(--login-radius-card);
+  box-shadow:
+    0 20px 25px -5px rgb(28 24 27 / 0.08),
+    0 8px 10px -6px rgb(28 24 27 / 0.06);
+}
+
+/* ── Tipografía ── */
+
+.pagina-login h1 {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: var(--login-text-title);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--login-stone-900);
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+
+/* Espacio después del encabezado (sustituto visual de línea tipo “Inicia sesión para continuar”) */
+.pagina-login h1 + form {
+  margin-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+/* ── Formulario — espacio vertical space-y-6 ── */
+
+.pagina-login form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+  margin: 0;
+}
+
+.pagina-login form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem; /* gap-1.5 en label/input */
+}
+
+/* Labels — text-sm text-stone-700 */
+.pagina-login form label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--login-stone-700);
+}
+
+/* Inputs — px-4 py-2 border rounded-lg stone-300 */
+.pagina-login form input[type='email'],
+.pagina-login form input[type='password'],
+.pagina-login form input[type='text'] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--login-stone-900);
+  background-color: var(--login-surface);
+  border: 1px solid var(--login-stone-300);
+  border-radius: var(--login-radius-input);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.pagina-login form input::placeholder {
+  color: var(--login-stone-400);
+  opacity: 1;
+}
+
+.pagina-login form input:hover:not(:disabled) {
+  border-color: var(--login-stone-500);
+}
+
+/* focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent */
+.pagina-login form input:focus {
+  outline: none;
+}
+
+.pagina-login form input:focus-visible {
+  border-color: transparent;
+  box-shadow: var(--lib-focus-ring);
+}
+
+.pagina-login form input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background-color: var(--login-bg-to);
+}
+
+/* Mensaje error */
+.pagina-login form p[role='alert'] {
+  margin: -0.25rem 0 0;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: #991b1b;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--login-radius-input);
+}
+
+/* ── Botón principal — primary lg w-full ── */
+
+.pagina-login form button[type='submit'] {
+  width: 100%;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-top: 0.125rem;
+  padding: 0.75rem 1.25rem;
+  font-family: inherit;
+  font-size: var(--login-text-btn);
+  font-weight: 600;
+  line-height: 1.35;
+  color: #ffffff;
+  background-color: var(--login-amber-600);
+  border: none;
+  border-radius: var(--login-radius-input);
+  box-shadow: 0 1px 2px rgb(28 24 27 / 0.06);
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.05s ease;
+}
+
+.pagina-login form button[type='submit']:hover:not(:disabled) {
+  background-color: var(--login-amber-700);
+}
+
+.pagina-login form button[type='submit']:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.pagina-login form button[type='submit']:focus-visible {
+  outline: none;
+  box-shadow: var(--lib-focus-ring);
+}
+
+.pagina-login form button[type='submit']:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Footer “Volver al inicio” — text-center text-sm stone-600 + enlace amber ── */
+
+.pagina-login > p {
+  margin: clamp(1.25rem, 3vw, 2rem) 0 0;
+  padding: 0;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--login-stone-600);
+}
+
+.pagina-login > p a {
+  color: var(--login-amber-600);
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.pagina-login > p a:hover {
+  color: var(--login-amber-700);
+  text-decoration: underline;
+}
+
+.pagina-login > p a:focus-visible {
+  outline: 2px solid var(--login-amber-500);
+  outline-offset: 2px;
+}
+
+/* ── Rutas específicas: full-bleed y sin bastidor del starter #root ── */
+
+#root:has(.pagina-login) {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-inline: none;
+  text-align: initial;
+}
+
+/* ── Responsive (mobile-first) — más aire tipo md:p-12 ── */
+
+@media (min-width: 768px) {
+  .pagina-login {
+    max-width: 26.5rem;
+    padding-inline: clamp(2rem, 4vw, 3rem);
+    padding-block: clamp(2rem, 5vw, 3rem);
+  }
+}

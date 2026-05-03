@@ -1,0 +1,39 @@
+{
+  "orders": [
+    {
+      "id": "PED-2026-108",
+      "userId": "user-1",
+      "fecha": "28/04/2026",
+      "total": 60000,
+      "estado": "Entregado"
+    },
+    {
+      "id": "PED-2026-095",
+      "userId": "user-1",
+      "fecha": "12/04/2026",
+      "total": 45000,
+      "estado": "En camino"
+    },
+    {
+      "id": "PED-2026-071",
+      "userId": "user-1",
+      "fecha": "30/03/2026",
+      "total": 30000,
+      "estado": "Entregado"
+    },
+    {
+      "id": "PED-2026-044",
+      "userId": "user-1",
+      "fecha": "15/03/2026",
+      "total": 90000,
+      "estado": "Entregado"
+    },
+    {
+      "id": "PED-2026-012",
+      "userId": "user-1",
+      "fecha": "02/03/2026",
+      "total": 30000,
+      "estado": "Cancelado"
+    }
+  ]
+}

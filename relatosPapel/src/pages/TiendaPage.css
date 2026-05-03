@@ -1,0 +1,365 @@
+/* Tienda compartida — cabecera tipo Mi Librería, grid catálogo, paginación */
+
+.tienda-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#root:has(.tienda) {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border: none;
+  text-align: initial;
+  min-height: 100svh;
+}
+
+.tienda {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  background: var(--lib-page-gradient);
+  color: var(--lib-stone-900);
+  font-family: var(--lib-font-sans);
+}
+
+.tienda-cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  padding: 0.85rem clamp(1rem, 3vw, 1.5rem);
+  border-bottom: 1px solid var(--lib-border);
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: var(--lib-shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.tienda-cabecera__marca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.tienda-cabecera__marca img {
+  display: block;
+}
+
+.tienda-cabecera__nombre {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--lib-stone-900);
+}
+
+.tienda-cabecera__busqueda {
+  flex: 1 1 200px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.tienda-cabecera__busqueda input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.55rem 2.55rem 0.55rem 1rem;
+  border: 1px solid var(--lib-stone-300);
+  border-radius: var(--lib-radius-md);
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--lib-stone-900);
+  background: #fff;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tienda-cabecera__busqueda input::placeholder {
+  color: var(--lib-stone-400);
+}
+
+.tienda-cabecera__busqueda input:hover {
+  border-color: var(--lib-stone-400);
+}
+
+.tienda-cabecera__busqueda input:focus {
+  outline: none;
+}
+
+.tienda-cabecera__busqueda input:focus-visible {
+  border-color: transparent;
+  box-shadow: var(--lib-focus-ring);
+}
+
+.tienda-cabecera__busqueda-wrap {
+  position: relative;
+}
+
+.tienda-cabecera__busqueda-icono {
+  position: absolute;
+  right: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.tienda-cabecera__acciones {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+.tienda-cabecera__carrito-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  color: var(--lib-stone-700);
+  padding: 0.45rem 0.55rem;
+  border-radius: var(--lib-radius-md);
+  transition: background-color 0.2s ease;
+}
+
+.tienda-cabecera__carrito-link:hover {
+  background: var(--lib-stone-100);
+  color: var(--lib-stone-900);
+}
+
+.tienda-cabecera__perfil {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: 14rem;
+  text-decoration: none;
+  color: var(--lib-stone-700);
+  padding: 0.35rem 0.45rem;
+  border-radius: var(--lib-radius-md);
+  transition: background-color 0.2s ease;
+}
+
+.tienda-cabecera__perfil:hover {
+  background: var(--lib-stone-100);
+}
+
+.tienda-cabecera__perfil-icono {
+  display: flex;
+  flex-shrink: 0;
+  line-height: 0;
+  color: var(--lib-stone-700);
+}
+
+.tienda-cabecera__usuario {
+  margin: 0;
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--lib-stone-800);
+}
+
+.tienda-cabecera__acciones > button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--lib-radius-md);
+  border: 1px solid var(--lib-stone-300);
+  background: #fff;
+  color: var(--lib-stone-700);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.tienda-cabecera__acciones > button:hover {
+  background: var(--lib-stone-50);
+  border-color: var(--lib-stone-400);
+}
+
+.tienda-cabecera__acciones > button:focus-visible {
+  outline: none;
+  box-shadow: var(--lib-focus-ring);
+}
+
+/* Botón idioma (decorativo) */
+.tienda-cabecera__acciones > button[aria-label='Idioma'] {
+  min-width: 2.5rem;
+}
+
+.tienda-cuerpo {
+  padding: 1.5rem clamp(1rem, 3vw, 1.5rem) 2rem;
+  flex: 1;
+  box-sizing: border-box;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.tienda-main {
+  min-width: 0;
+}
+
+.tienda-main__titulo {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--lib-stone-900);
+}
+
+.tienda-resultado-busqueda {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  color: var(--lib-stone-600);
+}
+
+.tienda-sin-resultados {
+  margin: 0;
+  padding: 1.5rem 1rem;
+  font-size: 1rem;
+  color: var(--lib-stone-600);
+  background: #fff;
+  border: 1px solid var(--lib-border);
+  border-radius: var(--lib-radius-lg);
+  box-shadow: var(--lib-shadow-sm);
+}
+
+.tienda-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.tarjeta-libro-enlace {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--lib-radius-xl);
+}
+
+.tarjeta-libro {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--lib-border);
+  border-radius: var(--lib-radius-xl);
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: var(--lib-shadow-sm);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.tarjeta-libro-enlace:hover .tarjeta-libro {
+  box-shadow: var(--lib-shadow-card-hover);
+  border-color: var(--lib-stone-200);
+}
+
+.tarjeta-libro-enlace:focus-visible {
+  outline: none;
+  border-radius: var(--lib-radius-xl);
+}
+
+.tarjeta-libro-enlace:focus-visible .tarjeta-libro {
+  box-shadow:
+    var(--lib-shadow-card),
+    0 0 0 3px var(--lib-amber-500);
+}
+
+.tarjeta-libro__portada {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--lib-radius-lg);
+  background: var(--lib-stone-100);
+}
+
+.tarjeta-libro__titulo {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--lib-stone-900);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.5rem;
+}
+
+.tarjeta-libro-enlace:hover .tarjeta-libro__titulo {
+  color: var(--lib-amber-600);
+}
+
+.tarjeta-libro__autor {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--lib-stone-600);
+}
+
+.tarjeta-libro__precio {
+  margin: 0.5rem 0 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--lib-amber-600);
+}
+
+/* Paginación — sin clases en JSX */
+.tienda > nav[aria-label='Paginación'] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1rem clamp(1rem, 3vw, 1.5rem) 1.5rem;
+  margin-top: auto;
+}
+
+.tienda > nav[aria-label='Paginación'] button {
+  cursor: pointer;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.65rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--lib-radius-md);
+  border: 1px solid var(--lib-stone-300);
+  background: #fff;
+  color: var(--lib-stone-700);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.tienda > nav[aria-label='Paginación'] button:hover {
+  background: var(--lib-stone-50);
+  border-color: var(--lib-stone-400);
+}
+
+.tienda > nav[aria-label='Paginación'] button[aria-current='page'] {
+  background: var(--lib-amber-600);
+  border-color: var(--lib-amber-600);
+  color: #fff;
+}
+
+.tienda > nav[aria-label='Paginación'] button:focus-visible {
+  outline: none;
+  box-shadow: var(--lib-focus-ring);
+}

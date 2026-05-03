@@ -1,0 +1,145 @@
+/* Detalle de libro — ficha tipo tarjeta elevada */
+
+.libro-detalle-contenido {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem clamp(1rem, 3vw, 1.5rem) 2rem;
+  box-sizing: border-box;
+}
+
+.libro-detalle-volver {
+  margin: 0 0 1rem;
+}
+
+.libro-detalle-volver a {
+  color: var(--lib-amber-600);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+
+.libro-detalle-volver a:hover {
+  color: var(--lib-amber-700);
+  text-decoration: underline;
+}
+
+.libro-detalle-ficha {
+  display: grid;
+  grid-template-columns: minmax(180px, 280px) 1fr;
+  gap: 1.5rem 2rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px solid var(--lib-border);
+  border-radius: var(--lib-radius-xl);
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: var(--lib-shadow-card);
+}
+
+@media (max-width: 640px) {
+  .libro-detalle-ficha {
+    grid-template-columns: 1fr;
+  }
+}
+
+.libro-detalle-ficha__portada {
+  width: 100%;
+  height: auto;
+  border-radius: var(--lib-radius-lg);
+  object-fit: cover;
+  aspect-ratio: 2 / 3;
+  background: var(--lib-stone-100);
+  box-shadow: var(--lib-shadow-sm);
+}
+
+.libro-detalle-ficha__texto {
+  min-width: 0;
+}
+
+.libro-detalle-ficha__titulo {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--lib-stone-900);
+}
+
+.libro-detalle-ficha__autor {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  color: var(--lib-stone-600);
+}
+
+.libro-detalle-ficha__precio {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--lib-amber-50);
+  color: var(--lib-amber-600);
+  font-weight: 700;
+  font-size: 1.15rem;
+  border-radius: var(--lib-radius-md);
+  border: 1px solid var(--lib-amber-100);
+}
+
+.libro-detalle-ficha__reseñas {
+  margin: 0 0 1.25rem;
+}
+
+.libro-detalle-ficha__reseñas a {
+  color: var(--lib-amber-600);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.libro-detalle-ficha__reseñas a:hover {
+  color: var(--lib-amber-700);
+}
+
+.libro-detalle-ficha__subtitulo {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--lib-stone-900);
+}
+
+.libro-detalle-ficha__descripcion {
+  margin: 0 0 1.25rem;
+  line-height: 1.6;
+  color: var(--lib-stone-700);
+  font-size: 0.975rem;
+}
+
+.libro-detalle-ficha__texto > p:last-child {
+  margin: 0;
+}
+
+.libro-detalle-ficha__texto button[type='button'] {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  padding: 0.65rem 1.35rem;
+  border: none;
+  border-radius: var(--lib-radius-md);
+  background: var(--lib-amber-600);
+  color: #fff;
+  box-shadow: var(--lib-shadow-sm);
+  transition:
+    background-color 0.2s ease,
+    transform 0.05s ease;
+}
+
+.libro-detalle-ficha__texto button[type='button']:hover {
+  background: var(--lib-amber-700);
+}
+
+.libro-detalle-ficha__texto button[type='button']:active {
+  transform: translateY(1px);
+}
+
+.libro-detalle-ficha__texto button[type='button']:focus-visible {
+  outline: none;
+  box-shadow: var(--lib-focus-ring);
+}
