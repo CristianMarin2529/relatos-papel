@@ -1,17 +1,13 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import CabeceraTienda from '../components/CabeceraTienda.jsx'
-import PaginacionCatalogo from '../components/PaginacionCatalogo.jsx'
-import TarjetaLibro from '../components/TarjetaLibro.jsx'
-import { useAuth } from '../context/useAuth.js'
-import { getBooks } from '../services/bookService.js'
+import CabeceraTienda from '../../components/CabeceraTienda.jsx'
+import PaginacionCatalogo from '../../components/PaginacionCatalogo.jsx'
+import TarjetaLibro from '../../components/TarjetaLibro.jsx'
+import { useAuth } from '../../context/useAuth.js'
+import { getBooks } from '../../services/bookService.js'
+import {filtrarPorTitulo} from '../../utils/filtro.js'
 import './TiendaPage.css'
 
-function filtrarPorTitulo(lista, texto) {
-  const t = texto.trim().toLowerCase()
-  if (!t) return lista
-  return lista.filter((libro) => libro.titulo.toLowerCase().includes(t))
-}
 
 export default function Tienda() {
   const navigate = useNavigate()
