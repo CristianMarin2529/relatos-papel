@@ -66,6 +66,7 @@ export default function Checkout() {
   async function handleConfirmarCompra() {
     setErrorCompra(null)
     setConfirmando(true)
+    let ultimoPedidoId = null
     try {
       for (const line of items) {
         for (let q = 0; q < line.cantidad; q++) {
@@ -74,10 +75,11 @@ export default function Checkout() {
             setErrorCompra(res.error)
             return
           }
+          ultimoPedidoId = res.data.id
         }
       }
       clearCart()
-      navigate('/tienda/perfil', { replace: true })
+      navigate('/tienda/compra-exitosa', { replace: true, state: { total, itemsCount: items.length, numeroOrden: ultimoPedidoId } })
     } finally {
       setConfirmando(false)
     }
