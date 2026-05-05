@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import CabeceraTienda from '../components/CabeceraTienda.jsx'
-import { useAuth } from '../context/useAuth.js'
-import { formatPrecioCOP } from '../utils/precio.js'
-import './TiendaPage.css'
+import CabeceraTienda from '../../components/CabeceraTienda.jsx'
+import { useAuth } from '../../context/useAuth.js'
+import { formatPrecioCOP } from '../../utils/precio.js'
+import '../Tienda/TiendaPage.css'
 import './CompraExitosa.css'
 
 export default function CompraExitosa() {
@@ -92,3 +92,4 @@ export default function CompraExitosa() {
         </div>
     )
 }
+
