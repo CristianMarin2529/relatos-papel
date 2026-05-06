@@ -14,15 +14,24 @@ export default function Tienda() {
   const [searchParams] = useSearchParams()
   const { usuario, logout } = useAuth()
   const [libros, setLibros] = useState([])
+  const [pagina, setPagina] = useState(1)
   const [cargando, setCargando] = useState(true)
   const [error, setError] = useState(null)
 
   const consulta = searchParams.get('q') ?? ''
 
+  const elementosPagina = 20
+
   const librosMostrados = useMemo(
     () => filtrarPorTitulo(libros, consulta),
     [libros, consulta],
   )
+
+  const indiceFinal = pagina * elementosPagina
+  const indiceInicial = indiceFinal - elementosPagina
+
+  const librosPaginados = librosMostrados.slice(indiceInicial, indiceFinal)
+  const totalPaginas = Math.ceil(librosMostrados.length / elementosPagina)
 
   useEffect(() => {
     if (!usuario) {
@@ -91,7 +100,7 @@ export default function Tienda() {
                 </p>
               ) : null}
               <div className="tienda-grid">
-                {librosMostrados.map((libro, i) => (
+                {librosPaginados.map((libro, i) => (
                   <TarjetaLibro
                     key={`${libro.id}-${libro.titulo}-${i}`}
                     {...libro}
@@ -103,7 +112,11 @@ export default function Tienda() {
         </section>
       </div>
 
-      <PaginacionCatalogo />
+      <PaginacionCatalogo
+          paginaActual={pagina}
+          totalPaginas={totalPaginas}
+          onChangePagina={setPagina}
+      />
     </div>
   )
 }
