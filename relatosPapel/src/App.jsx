@@ -9,6 +9,7 @@ import Carrito from './pages/Carrito/Carrito.jsx'
 import Checkout from './pages/Checkout/Checkout.jsx'
 import Perfil from './pages/Perfil/Perfil.jsx'
 import PerfilDetalle from './pages/Perfil/PerfilDetalle.jsx'
+import CompraExitosa from './pages/CompraExitosa/CompraExitosa.jsx'
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="tienda/perfil" element={<Perfil />} />
         <Route path="tienda/perfil/datos" element={<PerfilDetalle />} />
         <Route path="about" element={<About />} />
+        <Route path="tienda/compra-exitosa" element={<CompraExitosa />} />
       </Route>
     </Routes>
   )
